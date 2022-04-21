@@ -1,0 +1,88 @@
+//Crie dois objetos com a estrutura abaixo:
+
+// - Nome (tipo String)
+// - Idade (tipo Number)
+// - Filiacao (Array): nomeDoPai (tipo String) e nomeDaMae (tipo String)
+// - Endereco (tipo Objeto): rua (tipo String), cidade (tipo String) e estado (tipo String)
+// - dadosCompletos (tipo função) (verifica se os dados acimas estão preenchidos)
+
+// Crie uma função que receba os dois objetos acima criados, imprima os valores de suas propriedades e por fim
+imprima o resultado da função chamada dadosCompleto() que deve verificar se todos os campos estão preenhidos.
+
+var cadastro1 = {
+nome:"Mateus Correia ",
+idade: 20,
+filiacao: ["Eugênio Pacelli","Maria José"],
+  endereco: {
+    rua:"Rua Fulano de Tal",
+    cidade: "João Pessoa",
+    estado:"Paraíba"
+  },
+dadosCompletos: function(){
+  if (this.nome == "" || this.idade == "" || this.filiacao[0] == "" || this.filiacao[1] == "" || this.endereco.rua == "" || this.endereco.cidade == "" || this.endereco.estado == "")
+    return false
+  return true;
+},
+retorno: function(){
+  if (this.dadosCompletos() == true){
+    console.log("Todos os dados foram preenchidos");
+  }
+}
+}
+
+
+var cadastro2 = {
+nome: "Luana Costa",
+idade:30,
+filiacao: ["Leandra", "Miguel"],
+  endereco:{
+    rua:"Rua Tal de Fulano",
+    cidade: "João Pessoa",
+    estado: "Paraíba"
+  },
+dadosCompletos: function(){
+  if (this.nome == "" || this.idade == "" || this.filiacao[0] == "" || this.filiacao[1] == "" || this.endereco.rua == "" || this.endereco.cidade == "" || this.endereco.estado == "")
+    return false
+  return true;
+},
+  retorno: function(){
+  if (this.dadosCompletos() == true){
+    console.log("Todos os dados foram preenchidos");
+  }
+}
+}
+
+function print(cadastro1, cadastro2){
+  console.log("1° Cadastro")
+  console.log("")
+  
+     console.log("Nome: " + cadastro1.nome + 
+          "\nIdade: " + cadastro1.idade +                           
+            "\nPai: " + cadastro1.filiacao[0] +
+            "\nMãe: " + cadastro1.filiacao[1] +
+"\nEndereço:\n  Rua: " +    cadastro1.endereco.rua + 
+            "\n  Cidade: " + cadastro1.endereco.cidade+ 
+            "\n  Estado: "+cadastro1.endereco.estado);
+      cadastro1.retorno();
+  
+  console.log("")
+  console.log("2° Cadastro")
+  console.log("")
+  
+    console.log("Nome: " + cadastro2.nome +
+            "\nIdade: " + cadastro2.idade + 
+            "\nPai: " + cadastro2.filiacao[0] +                     
+            "\nMãe: " + cadastro2.filiacao[1] + 
+"\nEndereço:\n  Rua: " +cadastro2.endereco.rua + 
+            "\n  Cidade: " + cadastro2.endereco.cidade +          
+            "\n  Estado: " + cadastro2.endereco.estado);
+    cadastro2.retorno();
+}
+
+print(cadastro1,cadastro2);
+
+
+
+
+
+
